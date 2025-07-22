@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compre Seguidores no Instagram</title>
+  <meta name="description" content="Compre seguidores reais no Instagram com entrega automática e segura. Planos de 10K até 50K.">
+  <link rel="icon" href="https://img.icons8.com/fluency/48/instagram-new.png" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0F0F0F;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #007aff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .subtitulo {
+      font-size: 16px;
+      color: #ccc;
+      margin-top: 8px;
+    }
+
+    .formulario {
+      max-width: 460px;
+      margin: 20px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input {
+      padding: 14px;
+      border: 1px solid #555;
+      border-radius: 12px;
+      font-size: 16px;
+      background-color: #1c1c1e;
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #888;
+    }
+
+    input:valid {
+      border-color: #28a745;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 15px;
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .info img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .button {
+      padding: 14px;
+      font-size: 16px;
+      background-color: #1a73e8;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .button:hover {
+      background-color: #005fcc;
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+
+    .verificado {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px 20px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .pagamento-seguro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      margin-top: 16px;
+      color: #28a745;
+    }
+
+    .pagamento-seguro img {
+      width: 22px;
+      height: 22px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
+      color: #777;
+      border-top: 1px solid #333;
+      margin-top: 60px;
+    }
+
+    footer span {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .modal-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(2px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-bg.active {
+      display: flex;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .modal {
+      background: #1c1c1e;
+      padding: 24px 30px 36px;
+      border-radius: 16px;
+      max-width: 360px;
+      width: 90%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      text-align: center;
+      font-size: 16px;
+      color: #28a745;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .modal .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #aaa;
+      transition: color 0.3s;
+    }
+
+    .modal .close-btn:hover {
+      color: #fff;
+    }
+
+    .finalizar-btn {
+      margin-top: 24px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .finalizar-btn:hover {
+      background-color: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MÁXIMA SEGUIDORES <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" /></h1>
+    <p class="subtitulo">Seguidores 100% reais, brasileiros e interagem com seu conteúdo ✅</p>
+  </header>
+
+  <div class="formulario">
+    <input type="text" id="username" placeholder="@seuusuario" />
+
+    <div class="info">
+      <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
+      <span>Seguidores para Instagram</span>
+    </div>
+
+    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/49btxpk_489669', 10)">
+      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
+      <span>Comprar 10 mil Seguidores</span>
+      <strong>R$10</strong>
+    </button>
+
+    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/jjhjsdt_489673', 20)">
+      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
+      <span>Comprar 20 mil Seguidores</span>
+      <strong>R$20</strong>
+    </button>
+
+    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/w3kipbp_490045', 30)">
+      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
+      <span>Comprar 30 mil Seguidores</span>
+      <strong>R$30</strong>
+    </button>
+
+    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/d3zec2e_491036', 40)">
+      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
+      <span>Comprar 40 mil Seguidores</span>
+      <strong>R$40</strong>
+    </button>
+
+    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/xxpyr2s_490204', 50)">
+      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
+      <span>Comprar 50 mil Seguidores</span>
+      <strong>R$50</strong>
+    </button>
+
+    <div class="pagamento-seguro">
+      <img src="ct.png" alt="Seguro" />
+      <span>Compra 100% segura via Cakto</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>Todos os seguidores são enviados no máximo em até 5 minutos.</p>
+    <span>© 2025 @mitohsa Todos os direitos reservados.</span>
+  </footer>
+
+  <div id="modal" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal">
+      <button class="close-btn" aria-label="Fechar pop-up" onclick="fecharModal()">&times;</button>
+      <p id="modalDesc"></p>
+      <button id="btnFinalizar" class="finalizar-btn" style="display:none;">Finalizar Pagamento</button>
+    </div>
+  </div>
+
+  <script>
+    let ultimoLink = null;
+    const btnFinalizar = document.getElementById("btnFinalizar");
+
+    function redirecionar(link, preco) {
+      const user = document.getElementById("username").value.trim();
+
+      if (user === "") {
+        mostrarModal("Por favor, insira seu @ do Instagram antes de continuar.", false);
+        return;
+      }
+
+      ultimoLink = link;
+      mostrarModal(`Tudo certo! Salvamos seu @.<br><br>Agora finalize o pagamento de <strong>R$${preco},00</strong> e seus seguidores serão enviados automaticamente.`, true);
+    }
+
+    function mostrarModal(mensagem, sucesso = false) {
+      const modal = document.getElementById("modal");
+      const modalDesc = document.getElementById("modalDesc");
+
+      modalDesc.innerHTML = mensagem;
+      btnFinalizar.style.display = sucesso ? "inline-block" : "none";
+      modal.classList.add("active");
+    }
+
+    function fecharModal() {
+      document.getElementById("modal").classList.remove("active");
+    }
+
+    btnFinalizar.addEventListener("click", () => {
+      if (ultimoLink) {
+        btnFinalizar.disabled = true;
+        setTimeout(() => {
+          window.open(ultimoLink, "_blank");
+          btnFinalizar.disabled = false;
+          fecharModal();
+        }, 1000);
+      }
+    });
+
+    window.onclick = function(event) {
+      if (event.target === document.getElementById("modal")) {
+        fecharModal();
+      }
+    };
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        fecharModal();
+      }
+    });
+  </script>
+</body>
+        </html>
