@@ -1,104 +1,230 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Compre Seguidores no Instagram</title>
-  <meta name="description" content="Compre seguidores reais no Instagram com entrega automática e segura. Planos de 10K até 50K.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pushfy — Seguidores</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="icon" href="https://img.icons8.com/fluency/48/instagram-new.png" />
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --bg: #0b0d0f;
+      --card: #0f1217;
+      --card-secondary: #0e1115;
+      --text: #e7f1ec;
+      --muted: #8ea39a;
+      --purple: #00ff2a;
+      --purple-strong: #00fb43;
+      --off: #0a3c0a;
+      --chip-bg: #0a3c0a;
+      --chip-border: transparent;
+      --border: transparent;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      --button-shadow: 0 10px 24px #000, 0 0 0 1px rgba(0, 0, 0, 0.25) inset;
+      --button-text: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: #0F0F0F;
-      color: #fff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      width: 100%;
     }
 
     header {
-      text-align: center;
-      padding: 40px 20px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: rgba(11, 13, 15, 0.8);
+      padding: 8px 4px;
+      backdrop-filter: blur(6px);
+      margin-bottom: 16px;
     }
 
-    header h1 {
-      font-size: 28px;
-      color: #007aff;
+    .header-content {
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 8px;
+      flex: 1;
     }
 
-    .subtitulo {
-      font-size: 16px;
-      color: #ccc;
-      margin-top: 8px;
+    .logo-text {
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      user-select: none;
+      font-size: 1.25rem;
     }
 
-    .formulario {
-      max-width: 460px;
-      margin: 20px auto;
-      padding: 0 20px;
+    @media (min-width: 768px) {
+      .logo-text {
+        font-size: 1.5rem;
+      }
+    }
+
+    main {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
 
-    input {
-      padding: 14px;
-      border: 1px solid #555;
+    .card-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: var(--card);
       border-radius: 12px;
-      font-size: 16px;
-      background-color: #1c1c1e;
-      color: #fff;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      width: calc(50% - 4px);
+      min-width: 150px;
+      transition: transform 0.2s ease;
+      aspect-ratio: 1/1;
     }
 
-    input::placeholder {
-      color: #888;
+    .card:hover {
+      transform: translateY(-4px);
     }
 
-    input:valid {
-      border-color: #28a745;
+    .card-header {
+      background-color: var(--card-secondary);
+      border-radius: 12px;
+      height: 80px;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      margin-bottom: 12px;
+      position: relative;
     }
 
-    .info {
+    .card-header-title {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      background-color: var(--card-secondary);
+      border-radius: 12px;
+      padding: 8px;
+      font-size: 1.125rem;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .price-container {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 15px;
-      color: #ccc;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .original-price {
+      color: #a0b5ac;
+      text-decoration: line-through;
+      opacity: 0.8;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .discount-chip {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background-color: var(--chip-bg);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--purple-strong);
+      user-select: none;
+    }
+
+    .current-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .payment-info {
+      font-size: 0.65rem;
+      color: var(--muted);
       margin-bottom: 8px;
     }
 
-    .info img {
-      width: 24px;
-      height: 24px;
+    .input-container {
+      text-align: center;
     }
 
-    .button {
-      padding: 14px;
-      font-size: 16px;
-      background-color: #1a73e8;
-      border: none;
-      border-radius: 12px;
-      color: white;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
+    .input-container label {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      user-select: none;
     }
 
-    .button:hover {
-      background-color: #005fcc;
-      transform: scale(1.02);
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    .instagram-handle {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 1px solid var(--purple);
+      background: linear-gradient(to bottom, #0b0d0f, #0b0d0f);
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      outline: none;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0, 251, 67, 0.2);
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      text-align: center;
+    }
+
+    .instagram-handle:focus {
+      border-color: var(--purple-strong);
+      box-shadow: 0 6px 16px rgba(0, 251, 67, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .instagram-handle::placeholder {
+      color: var(--muted);
+      opacity: 0.7;
+      text-align: center;
     }
 
     .verificado {
@@ -106,228 +232,276 @@
       height: 18px;
     }
 
-    .cta {
-      text-align: center;
-      margin: 40px 20px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #28a745;
-    }
-
-    .pagamento-seguro {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      margin-top: 16px;
-      color: #28a745;
-    }
-
     .pagamento-seguro img {
       width: 22px;
       height: 22px;
     }
 
+    .buy-button {
+      background: linear-gradient(to bottom, var(--purple), var(--purple-strong));
+      border: 0px solid rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      box-shadow: var(--button-shadow);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--button-text);
+      padding: 8px;
+      width: 100%;
+      cursor: not-allowed;
+      user-select: none;
+      opacity: 1;
+      transition: transform 0.075s ease-out, background-color 0.3s ease;
+    }
+
+    .buy-button.enabled {
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    .buy-button.enabled:active {
+      transform: translateY(1px);
+    }
+
+    .delivery-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #00ff2a;
+      font-weight: 600;
+      margin-top: 100px;
+      margin-bottom: 0px;
+    }
+    
+    .delivery-text2 {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
     footer {
       text-align: center;
-      padding: 30px 20px;
-      font-size: 13px;
-      color: #777;
-      border-top: 1px solid #333;
-      margin-top: 60px;
+      padding: 16px 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 32px;
     }
 
-    footer span {
-      display: block;
-      margin-top: 8px;
-      font-size: 12px;
-    }
-
-    .modal-bg {
-      display: none;
+    .popup {
       position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(2px);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-bg.active {
-      display: flex;
-      animation: fadeIn 0.3s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    .modal {
-      background: #1c1c1e;
-      padding: 24px 30px 36px;
-      border-radius: 16px;
-      max-width: 360px;
-      width: 90%;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-      text-align: center;
-      font-size: 16px;
-      color: #28a745;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .modal .close-btn {
-      position: absolute;
-      top: 12px;
+      bottom: 20px;
+      left: 16px;
       right: 16px;
-      background: transparent;
-      border: none;
-      font-size: 22px;
-      cursor: pointer;
-      color: #aaa;
-      transition: color 0.3s;
-    }
-
-    .modal .close-btn:hover {
-      color: #fff;
-    }
-
-    .finalizar-btn {
-      margin-top: 24px;
-      background-color: #28a745;
-      border: none;
-      color: white;
-      font-weight: 700;
-      padding: 12px 24px;
+      width: calc(100% - 32px);
+      background-color: #131313;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 8px 16px;
       border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 100;
+      text-align: center;
     }
 
-    .finalizar-btn:hover {
-      background-color: #1e7e34;
+    .popup.show {
+      opacity: 1;
+      visibility: visible;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>MÁXIMA SEGUIDORES <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" /></h1>
-    <p class="subtitulo">Seguidores 100% reais, brasileiros e interagem com seu conteúdo ✅</p>
-  </header>
-
-  <div class="formulario">
-    <input type="text" id="username" placeholder="@seuusuario" />
-
-    <div class="info">
-      <img src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
-      <span>Seguidores para Instagram</span>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <img alt="Pushfy Logo, purple and white stylized letter P with a circle background" src="logo.png" style="height: 36px; width: auto;">
+        <span class="logo-text">MÁXIMA SEGUIDORES <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" /></span>
+      </div>
+    </header>
+    <div class="input-container" style="margin-top: 32px; margin-bottom: 48px;">
+      <label for="insta-global">Em qual conta deseja os seguidores?</label>
+      <input class="instagram-handle" id="insta-global" placeholder="exemplo: @seuinsta " type="text">
     </div>
 
-    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/3ecj88m', 10)">
-      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
-      <span>Comprar 10 mil Seguidores</span>
-      <strong>R$10</strong>
-    </button>
-
-    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/3aahzsi', 20)">
-      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
-      <span>Comprar 20 mil Seguidores</span>
-      <strong>R$20</strong>
-    </button>
-
-    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/344ctvb', 30)">
-      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
-      <span>Comprar 30 mil Seguidores</span>
-      <strong>R$30</strong>
-    </button>
-
-    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/3cvy67w', 40)">
-      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
-      <span>Comprar 40 mil Seguidores</span>
-      <strong>R$40</strong>
-    </button>
-
-    <button class="button" onclick="redirecionar('https://pay.cakto.com.br/3aa92v4', 50)">
-      <img src="https://img.icons8.com/fluency/48/instagram-verification-badge.png" class="verificado" alt="Verificado" />
-      <span>Comprar 50 mil Seguidores</span>
-      <strong>R$50</strong>
-    </button>
-
-    <div class="pagamento-seguro">
-      <img src="ct.png" alt="Seguro" />
-      <span>Compra 100% segura via Cakto™</span>
-    </div>
+    <div class="delivery-text">todos os seguidores são enviados em 5 minutos</div>
+    <div class="delivery-text2">escolha seu pacote abaixo:</div>
+    <main aria-label="Produtos">
+      <div class="card-row">
+        <article class="card">
+          <div class="card-header">
+            <div class="card-header-title">10 Mil Seguidores</div>
+          </div>
+          <div class="card-content">
+            <div class="price-container">
+              <div class="original-price">R$100,00</div>
+              <div class="discount-chip"><i class="fas fa-arrow-trend-down"></i>90% OFF</div>
+            </div>
+            <div class="current-price">R$10,00</div>
+            <div class="payment-info">À vista no Pix</div>
+            <button class="buy-button" data-link="https://primeiravendaonline.github.io/maximaseguidores/10k.html" disabled>Comprar agora</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div class="card-header-title">20 Mil Seguidores</div>
+          </div>
+          <div class="card-content">
+            <div class="price-container">
+              <div class="original-price">R$200,00</div>
+              <div class="discount-chip"><i class="fas fa-arrow-trend-down"></i>90% OFF</div>
+            </div>
+            <div class="current-price">R$20,00</div>
+            <div class="payment-info">À vista no Pix</div>
+            <button class="buy-button" data-link="https://example.com/buy/20k" disabled>Comprar agora</button>
+          </div>
+        </article>
+      </div>
+      <div class="card-row">
+        <article class="card">
+          <div class="card-header">
+            <div class="card-header-title">30 Mil Seguidores</div>
+          </div>
+          <div class="card-content">
+            <div class="price-container">
+              <div class="original-price">R$300,00</div>
+              <div class="discount-chip"><i class="fas fa-arrow-trend-down"></i>90% OFF</div>
+            </div>
+            <div class="current-price">R$30,00</div>
+            <div class="payment-info">À vista no Pix</div>
+            <button class="buy-button" data-link="https://example.com/buy/30k" disabled>Comprar agora</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div class="card-header-title">40 Mil Seguidores</div>
+          </div>
+          <div class="card-content">
+            <div class="price-container">
+              <div class="original-price">R$400,00</div>
+              <div class="discount-chip"><i class="fas fa-arrow-trend-down"></i>90% OFF</div>
+            </div>
+            <div class="current-price">R$40,00</div>
+            <div class="payment-info">À vista no Pix</div>
+            <button class="buy-button" data-link="https://example.com/buy/40k" disabled>Comprar agora</button>
+          </div>
+        </article>
+      </div>
+      <div class="card-row">
+        <article class="card">
+          <div class="card-header">
+            <div class="card-header-title">50 Mil Seguidores</div>
+          </div>
+          <div class="card-content">
+            <div class="price-container">
+              <div class="original-price">R$500,00</div>
+              <div class="discount-chip"><i class="fas fa-arrow-trend-down"></i>90% OFF</div>
+            </div>
+            <div class="current-price">R$50,00</div>
+            <div class="payment-info">À vista no Pix</div>
+            <button class="buy-button" data-link="https://example.com/buy/50k" disabled>Comprar agora</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div class="card-header-title">60 Mil Seguidores</div>
+          </div>
+          <div class="card-content">
+            <div class="price-container">
+              <div class="original-price">R$600,00</div>
+              <div class="discount-chip"><i class="fas fa-arrow-trend-down"></i>90% OFF</div>
+            </div>
+            <div class="current-price">R$60,00</div>
+            <div class="payment-info">À vista no Pix</div>
+            <button class="buy-button" data-link="https://example.com/buy/60k" disabled>Comprar agora</button>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      Compra segura via Cakto
+      <div class="pagamento-seguro">
+        <img src="ct.png" alt="Seguro" />
+      </div>
+    </footer>
+    <div class="popup" id="purchase-popup"></div>
   </div>
+<script>
+  const buttons = document.querySelectorAll('.buy-button');
 
-  <footer>
-    <p>Todos os seguidores são enviados no máximo em até 5 minutos.</p>
-    <span>© 2025 Todos os direitos reservados.</span>
-  </footer>
-
-  <div id="modal" class="modal-bg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-    <div class="modal">
-      <button class="close-btn" aria-label="Fechar pop-up" onclick="fecharModal()">&times;</button>
-      <p id="modalDesc"></p>
-      <button id="btnFinalizar" class="finalizar-btn" style="display:none;">Finalizar Pagamento</button>
-    </div>
-  </div>
-
-  <script>
-    let ultimoLink = null;
-    const btnFinalizar = document.getElementById("btnFinalizar");
-
-    function redirecionar(link, preco) {
-      const user = document.getElementById("username").value.trim();
-
-      if (user === "") {
-        mostrarModal("Por favor, insira seu @ do Instagram antes de continuar.", false);
-        return;
-      }
-
-      ultimoLink = link;
-      mostrarModal(`Tudo certo! Salvamos seu @.<br><br>Agora finalize o pagamento de <strong>R$${preco},00</strong> e seus seguidores serão enviados automaticamente.`, true);
-    }
-
-    function mostrarModal(mensagem, sucesso = false) {
-      const modal = document.getElementById("modal");
-      const modalDesc = document.getElementById("modalDesc");
-
-      modalDesc.innerHTML = mensagem;
-      btnFinalizar.style.display = sucesso ? "inline-block" : "none";
-      modal.classList.add("active");
-    }
-
-    function fecharModal() {
-      document.getElementById("modal").classList.remove("active");
-    }
-
-    btnFinalizar.addEventListener("click", () => {
-      if (ultimoLink) {
-        btnFinalizar.disabled = true;
-        setTimeout(() => {
-          window.open(ultimoLink, "_blank");
-          btnFinalizar.disabled = false;
-          fecharModal();
-        }, 1000);
+  buttons.forEach(button => {
+    button.disabled = false; // sempre habilitado
+    button.classList.add('enabled');
+    button.addEventListener('click', () => {
+      button.animate(
+        [
+          { transform: 'scale(1)' },
+          { transform: 'scale(0.98)' },
+          { transform: 'scale(1)' }
+        ],
+        { duration: 120, easing: 'ease-out' }
+      );
+      const link = button.getAttribute('data-link');
+      if (link) {
+        window.location.href = link;
       }
     });
+  });
 
-    window.onclick = function(event) {
-      if (event.target === document.getElementById("modal")) {
-        fecharModal();
-      }
-    };
+  // Lista de nomes (masculinos e femininos)
+  const firstNames = [
+    'João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Julia', 'Gabriel', 'Sofia', 'Matheus', 'Isabela',
+    'Rafael', 'Camila', 'Thiago', 'Larissa', 'Bruno', 'Fernanda', 'Vinicius', 'Amanda', 'Gustavo', 'Beatriz',
+    'Felipe', 'Laura', 'Diego', 'Mariana', 'Leonardo', 'Clara', 'André', 'Lívia', 'Renato', 'Vitória',
+    'Ricardo', 'Letícia', 'Eduardo', 'Helena', 'Caio', 'Manuela', 'Daniel', 'Luana', 'Samuel', 'Carolina'
+  ];
 
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        fecharModal();
-      }
-    });
-  </script>
+  // Lista de sobrenomes
+  const lastNames = [
+    'Silva', 'Oliveira', 'Santos', 'Costa', 'Ferreira', 'Almeida', 'Lima', 'Pereira', 'Souza', 'Rodrigues',
+    'Mendes', 'Gomes', 'Barbosa', 'Dias', 'Ribeiro', 'Carvalho', 'Martins', 'Lopes', 'Correia', 'Castro',
+    'Azevedo', 'Rocha', 'Borges', 'Vieira', 'Nascimento', 'Ramos', 'Figueiredo', 'Leite', 'Monteiro', 'Farias'
+  ];
+
+  // Lista de produtos
+  const products = [
+    '10 Mil Seguidores', '20 Mil Seguidores', '30 Mil Seguidores',
+    '40 Mil Seguidores', '50 Mil Seguidores', '60 Mil Seguidores'
+  ];
+
+  function getRandomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  function showPopup() {
+    const popup = document.getElementById('purchase-popup');
+    const firstName = getRandomItem(firstNames);
+    const lastName = getRandomItem(lastNames);
+    const product = getRandomItem(products);
+    popup.textContent = `${firstName} ${lastName} acabou de comprar ${product}!`;
+    popup.classList.add('show');
+    setTimeout(() => {
+      popup.classList.remove('show');
+    }, 5000);
+  }
+
+  function startPopupInterval() {
+    showPopup();
+    function scheduleNextPopup() {
+      const interval = Math.floor(Math.random() * (25000 - 15000 + 1)) + 15000;
+      setTimeout(() => {
+        showPopup();
+        scheduleNextPopup();
+      }, interval);
+    }
+    scheduleNextPopup();
+  }
+
+  window.addEventListener('load', startPopupInterval);
+</script>
 </body>
 </html>
